@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <span></span>
+    <p>{{name}}</p>
+    <section>{{age}}</section>
+    <div v-html="button"></div>
+    <input type="text" v-model="name">
+    <div v-show="showType">1111111111111</div>
+  </div>
+  <script src="./mvue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        name: '我的名字',
+        age: 99,
+        button: '<button @click="headleClick">点我</button>',
+        showType:true
+      },
+      methods: {
+        headleClick() {
+          this.name = '修改名称'
+          this.showType = !this.showType
+        },
+        headleClick2() {
+          this.age = 12
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
